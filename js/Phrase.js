@@ -32,9 +32,25 @@
        }
    }
    }
-   /*Checks to see if the letter selected by the player matches a letter in the phrase.*/
+   /* Checks if passed letter is in phrase
+ * @param (string) letter - Letter to check */
    checkLetter(letter){
-     
+     if (this.phrase.includes(letter)){
+       return true;
+     }
+     else {
+       return false;
+     }
    }
-   showMatchedLetter(letter){}
+/* Displays passed letter on screen after a match is found
+* @param (string) letter - Letter to display
+*/
+   showMatchedLetter(letter){
+     if (this.checkLetter){
+      let matchedLetters = document.querySelectorAll(`.${letter}`);
+			for (let i = 0; i < matchedLetters.length; i++) {
+				matchedLetters[i].className = 'show';
+       }
+     }
+   }
  };
