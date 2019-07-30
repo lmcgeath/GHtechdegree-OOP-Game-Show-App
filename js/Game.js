@@ -48,18 +48,19 @@ createPhrases() {
     //Removes li elements
     phrase.removeChild(ul);
     //enables onscreen keyboard buttons and update each to use the 'key' css class, removes 'chosen' and 'wrong classes'
+    button.disabled = false;
 
     for (let i = 0; i < keys.length; i++){
       keys[i].className = 'key';
     // keys.classList.remove('wrong', 'chosen');
   }
+    //Loops through and resets all heart images to liveHeart.png
     for (let i = 0; i < lives.length; i++){
       lives[i].setAttribute('src', 'images/liveHeart.png')
     }
-    button.disabled = false;
     console.log(keys)
 }
-    // let li = document.querySelectorAll('li');
+
     // let keys = document.querySelectorAll('.key')
     // for (let i = 0; i < keys.length; i++){
     //   // keys[i].classList.remove('wrong', 'chosen')
@@ -67,7 +68,6 @@ createPhrases() {
     //
     // }
 
-    //resets all heart images to liveHeart.png
 
   /* Checks for winning move
    * @return {boolean} True if game has been won, false if game wasn't won */
