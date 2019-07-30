@@ -42,33 +42,20 @@ createPhrases() {
   resetGame(){
     const phrase = document.querySelector('#phrase');
     const ul = document.querySelector('ul');
-    const keys = document.querySelectorAll('.key');
-    const button = event.target;
+    const keys = document.querySelectorAll('.keyrow button');
     const lives = document.querySelectorAll('.tries img')
     //Removes li elements
     phrase.removeChild(ul);
     //enables onscreen keyboard buttons and update each to use the 'key' css class, removes 'chosen' and 'wrong classes'
-    button.disabled = false;
-
     for (let i = 0; i < keys.length; i++){
       keys[i].className = 'key';
-    // keys.classList.remove('wrong', 'chosen');
+      keys[i].disabled = false;
   }
     //Loops through and resets all heart images to liveHeart.png
     for (let i = 0; i < lives.length; i++){
       lives[i].setAttribute('src', 'images/liveHeart.png')
     }
-    console.log(keys)
 }
-
-    // let keys = document.querySelectorAll('.key')
-    // for (let i = 0; i < keys.length; i++){
-    //   // keys[i].classList.remove('wrong', 'chosen')
-    //   keys[i].className = 'key'
-    //
-    // }
-
-
   /* Checks for winning move
    * @return {boolean} True if game has been won, false if game wasn't won */
   checkForWin() {
