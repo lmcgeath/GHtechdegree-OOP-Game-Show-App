@@ -16,3 +16,4 @@ keysParent.addEventListener('click', function(event){
   game.handleInteraction()
 }
 })
+//fs
